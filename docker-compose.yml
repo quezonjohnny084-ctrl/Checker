@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: zia-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=change-this-to-a-random-string
+      - ADMIN_KEY=ZIA_ADMIN_2026
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - DATABASE_URL=sqlite:///data/zia.db
+    volumes:
+      - ./data:/app/data
+    networks:
+      - zia-network
+
+  frontend:
+    build: ./frontend
+    container_name: zia-frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - zia-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: zia-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./frontend/build:/usr/share/nginx/html
+      - ./certbot-data:/etc/letsencrypt
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - zia-network
+
+networks:
+  zia-network:
+    driver: bridge
