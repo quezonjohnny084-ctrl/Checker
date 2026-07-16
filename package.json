@@ -7,6 +7,6 @@
     "heroku-postbuild": "npm run build"
   },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   }
 }
