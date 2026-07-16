@@ -10,7 +10,7 @@ import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "8894561003:AAHhTRkiXbeKxGXMCcMjiGzQLGXmdiQqtgI"
 ADMIN_ID = "8632939616"  # Your Telegram ID
 
 # Simple JSON storage
