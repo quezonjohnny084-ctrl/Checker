@@ -1,0 +1,16 @@
+{
+  "appId": "com.zia.codm",
+  "appName": "ZIA CODM",
+  "webDir": "build",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0a0a0f"
+    }
+  }
+}
