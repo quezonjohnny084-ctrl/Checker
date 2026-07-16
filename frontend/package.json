@@ -1,0 +1,46 @@
+{
+  "name": "zia-codm-web",
+  "version": "2.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "axios": "^1.6.2",
+    "zustand": "^4.4.7",
+    "recharts": "^2.10.3",
+    "react-hot-toast": "^2.4.1",
+    "tailwindcss": "^3.3.6",
+    "@capacitor/core": "^5.6.0",
+    "@capacitor/android": "^5.6.0",
+    "@capacitor/ios": "^5.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "cap:init": "npx cap init ZIACODM com.zia.codm --web-dir build",
+    "cap:add-android": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "cap:open-android": "npx cap open android",
+    "build:apk": "npm run build && npm run cap:sync && cd android && ./gradlew assembleDebug"
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
